@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "brain-games-2026",
+  "compatibility_date": "2024-12-30",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    { "pattern": "braingames.icssc.club", "custom_domain": true },
+    { "pattern": "braingames-2026.icssc.club", "custom_domain": true },
+    { "pattern": "2026.braingames.icssc.club", "custom_domain": true }
+  ]
+}
