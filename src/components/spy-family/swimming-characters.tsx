@@ -12,6 +12,13 @@ interface SwimmingCharactersProps {
 
 const CHARACTERS = [
   {
+    src: "/spy-family/aquarium-penguin-water.png",
+    alt: "Penguin",
+    left: "58%",
+    top: "49%",
+    wobbleOffset: 4,
+  },
+  {
     src: "/spy-family/aquarium-loid.png",
     alt: "Loid Forger",
     left: "68%",
@@ -24,13 +31,6 @@ const CHARACTERS = [
     left: "50%",
     top: "57%",
     wobbleOffset: 2,
-  },
-  {
-    src: "/spy-family/aquarium-penguin.png",
-    alt: "Penguin",
-    left: "35%",
-    top: "40%",
-    wobbleOffset: 4,
   },
 ] as const;
 
@@ -47,9 +47,9 @@ export function SwimmingCharacters({ scrollY }: SwimmingCharactersProps) {
           key={character.src}
           src={character.src}
           alt={character.alt}
-          className="absolute pointer-events-none h-auto lg:w-[200px] xl:w-[300px]"
-          width={300}
-          height={300}
+          className={`absolute pointer-events-none h-auto ${character.alt === "Penguin" ? "lg:w-[700px] xl:w-[1100px]" : "lg:w-[200px] xl:w-[300px]"}`}
+          width={character.alt === "Penguin" ? 1100 : 300}
+          height={character.alt === "Penguin" ? 1100 : 300}
           style={{
             left: character.left,
             top: character.top,
